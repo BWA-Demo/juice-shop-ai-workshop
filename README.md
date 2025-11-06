@@ -89,6 +89,6 @@ Which vulnerabilities do I need to fix for this Tier 3 application?
 ```
 
 ```
-Create an AIBOM and check if it aligns to my company's AI Usage Policy.
+Create an AIBOM and check if it aligns to my company's AI Usage Policy as defined in the SECURITY.md file
 ```
 
