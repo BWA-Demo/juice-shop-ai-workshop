@@ -8,7 +8,7 @@ import utils = require('../utils')
 import logger from '../logger'
 import { promisify } from 'util'
 const fs = require('fs')
-const glob = promisify(require('glob'))
+const { glob } = require('glob')
 const copyFile = promisify(fs.copyFile)
 const access = promisify(fs.access)
 
@@ -25,7 +25,7 @@ const restoreOverwrittenFilesWithOriginals = async () => {
   }
 
   try {
-    const files = await glob(path.resolve('data/static/i18n/*.json'))
+    const files = await glob(path.resolve('data/static/i18n/*.json'), { windowsPathsNoEscape: true })
     await Promise.all(
       files.map((filename: string) => copyFile(filename, path.resolve('i18n/', filename.substring(filename.lastIndexOf('/') + 1))))
     )
